@@ -39,3 +39,14 @@ build/
 /reports/*
 */.idea/
 /.idea/workspace.xml
+/.idea/libraries/
+/.idea/compiler.xml
+/.idea/dbnavigator.xml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/checkstyle-idea.xml
+/.idea/encodings.xml
+/.idea/jpa-buddy.xml
+/.idea/vcs.xml
