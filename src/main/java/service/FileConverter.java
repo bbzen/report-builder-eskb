@@ -78,20 +78,21 @@ public class FileConverter {
                 }
             }
         }
-        try (FileOutputStream fout = new FileOutputStream("./reports/" + file.getFileName() + ".xlsx")) {
+        try (FileOutputStream fout = new FileOutputStream("./" + file.getFileName() + ".xlsx")) {
             book.write(fout);
         }
     }
 
     private static List<Path> findFile() {
         List<Path> foundFiles = null;
+        Path path = Path.of(".");
         try {
-            foundFiles = Files.list(Path.of("./reports"))
+            foundFiles = Files.list(path)
                     .filter(file -> !Files.isDirectory(file))
                     .filter(file -> !file.getFileName().endsWith("html"))
                     .collect(Collectors.toList());
         } catch (IOException e) {
-            throw new RuntimeException("Something went wrong");
+            throw new RuntimeException("Cant find files in " + path.toString());
         }
 
         if (foundFiles != null) {
